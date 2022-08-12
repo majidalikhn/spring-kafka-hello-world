@@ -2,7 +2,8 @@ package com.example.springkafkahelloworld.controller;
 
 import com.example.springkafkahelloworld.message.RandomClassObjectDto;
 import com.example.springkafkahelloworld.service.KafkaProducer;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.UUID;
@@ -17,7 +18,7 @@ public class KafkaController {
     }
 
     @GetMapping("/")
-    public void sign() throws Exception {
+    public void sign() {
         RandomClassObjectDto data = RandomClassObjectDto.builder()
                 .documentIds(List.of(UUID.randomUUID(), UUID.randomUUID()))
                 .organizationId("organizationId")
